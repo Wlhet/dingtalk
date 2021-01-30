@@ -21,14 +21,6 @@ const (
 
 var DefaultDingtalkCrypto *Crypto
 
-type Crypto struct {
-	Token    string
-	AesKey   string
-	SuiteKey string
-	block    cipher.Block
-	bkey     []byte
-}
-
 /*
 	token		数据签名需要用到的token，ISV(服务提供商)推荐使用注册套件时填写的token，普通企业可以随机填写
 	aesKey  	数据加密密钥。用于回调数据的加密，长度固定为43个字符，从a-z, A-Z, 0-9共62个字符中选取,您可以随机生成，ISV(服务提供商)推荐使用注册套件时填写的EncodingAESKey

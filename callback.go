@@ -2,18 +2,6 @@ package dingtalk
 
 import "fmt"
 
-type CallBack struct {
-	CallBackTag []string `json:"call_back_tag"`
-	Token       string   `json:"token"`
-	AesKey      string   `json:"aes_key"`
-	Url         string   `json:"url"`
-}
-
-type CallBackResponse struct {
-	CallBack
-	Msg
-}
-
 //注册回调
 func (this *DingTalk) RegCallBack(cb CallBack) Msg {
 	access_token := this.GetToken()
